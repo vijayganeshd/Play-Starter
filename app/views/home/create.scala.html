@@ -1,0 +1,21 @@
+@(employeeForm : Form[Employee])
+@import helper._
+
+    <html>
+
+        <head>
+            <title> Create Employee</title>
+        </head>
+        <body>
+            <h1>Create Employee</h1>
+            @helper.form(action = routes.EmployeeController.save()){
+            @helper.inputText(employeeForm("id"))
+            @helper.inputText(employeeForm("name"))
+            @helper.inputText(employeeForm("designation"))
+            @helper.inputText(employeeForm("salary"))
+            <input type="submit" value="Create Employee">
+            }
+        </body>
+
+
+    </html>

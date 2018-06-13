@@ -1,0 +1,37 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+#index page
+GET     /employee                  controllers.EmployeeController.index()
+
+# Creating employee
+GET     /employee/create           controllers.EmployeeController.create()
+
+#diplaying employee details
+GET     /employee/:id              controllers.EmployeeController.display(id : Integer)
+
+#editing employee details
+GET     /employee/edit/:id         controllers.EmployeeController.edit(id:Integer)
+
+#update employee details
+POST    /employee/edit          controllers.EmployeeController.update()
+
+#saving employee record
+POST    /employee/create           controllers.EmployeeController.save()
+
+
+#deleting employee
+GET     /employee/delete/:id       controllers.EmployeeController.delete(id:Integer)
+
+
+GET     /home/:user/:company              controllers.HomeController.index(user:String,company:String)
+
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+

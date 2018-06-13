@@ -1,0 +1,16 @@
+@(employee: Employee)
+<html>
+    <head>
+        <title> Employee Details</title>
+
+    </head>
+    <body>
+        <h1>Employee Details for ID :@employee.id</h1>
+        <p> Employee Name : @employee.name</p>
+        <p> Employee Designation : @employee.designation</p>
+        <p> Employee salary : @employee.salary</p>
+    </body>
+    <a href="@routes.EmployeeController.edit(employee.id)">Edit Employee</a>
+    <a href="@routes.EmployeeController.delete(employee.id)">Delete Employee</a>
+
+</html>

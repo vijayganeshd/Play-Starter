@@ -1,0 +1,14 @@
+@(employees : List[Employee])
+
+@emptemplate("All Employees"){
+    <h1>All Employees</h1>
+    @for(emp <- employees) {
+        <a href="@routes.EmployeeController.display(emp.id)">@emp.id</a>
+        <p>Employee Name: @emp.name</p>
+        <p>Employee Designation: @emp.designation</p>
+        <p>Employee Salary: @emp.salary</p>
+    }
+    <a href="@routes.EmployeeController.create()">create Employee</a>
+}
+
+
